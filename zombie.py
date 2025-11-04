@@ -37,7 +37,16 @@ class Zombie:
 
 
     def get_bb(self):
-        return self.x - 100, self.y - 100, self.x + 100, self.y + 100
+        if self.dir < 0:
+            if self.hp == 2:
+                return self.x - 70, self.y - 100, self.x + 80, self.y + 100
+            else:
+                return self.x - 30, self.y - 50 - 50, self.x + 30, self.y - 50 + 50
+        else:
+            if self.hp == 2:
+                return self.x - 70, self.y - 100, self.x + 80, self.y + 100
+            else:
+                return self.x - 30, self.y - 50 - 50, self.x + 30, self.y - 50 + 50
 
     def update(self):
         self.frame = (self.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % FRAMES_PER_ACTION

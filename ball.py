@@ -37,6 +37,8 @@ class Ball:
     def handle_collision(self, group, other):
         if group == 'boy:ball':
             game_world.remove_object(self)
+        elif group == 'grass:ball':
+            self.stopped = True
 
 
 

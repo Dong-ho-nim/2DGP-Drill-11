@@ -32,6 +32,7 @@ def init():
 
     grass = Grass()
     game_world.add_object(grass, 0)
+    game_world.add_collision_pair('grass:ball', grass, None)
 
     boy = Boy()
     game_world.add_object(boy, 1)
@@ -45,10 +46,10 @@ def init():
 
     for ball in balls:
         game_world.add_collision_pair('boy:ball', boy, ball)
-        game_world.add_collision_pair('zombie:ball', boy, ball)
 
     for zombie in zombies:
         game_world.add_collision_pair('zombie:ball', zombie, boy)
+        game_world.add_collision_pair('boy:zombie',zombie, boy)
 
 
 
