@@ -178,8 +178,6 @@ class Boy:
             self.ball_count -= 1
             ball = Ball(self.x+self.face_dir*40, self.y+100, self.face_dir * 15)
             game_world.add_object(ball, 1)
-            game_world.add_object('grass:ball',None, ball)
-            game_world.add_object('boy:ball',None, ball)
 
     def get_bb(self):
         return self.x - 20, self.y - 40, self.x + 20, self.y + 40
