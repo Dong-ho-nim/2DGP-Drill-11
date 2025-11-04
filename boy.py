@@ -6,6 +6,7 @@ import game_framework
 
 from ball import Ball
 from state_machine import StateMachine
+from zombie import Zombie
 
 
 def space_down(e): # e is space down ?
@@ -180,6 +181,8 @@ class Boy:
             game_world.add_object(ball,1)
             game_world.add_collision_pair('grass:ball', None, ball)
             game_world.add_collision_pair('boy:ball', None, ball)
+            game_world.add_collision_pair('zombie:ball', None, ball)
+
 
     def get_bb(self):
         return self.x - 20, self.y - 40, self.x + 20, self.y + 40
